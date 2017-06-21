@@ -20,20 +20,22 @@ public class NetworkUtils {
 
     private static final String NEWS_BASE_URL =
             //"https://newsapi.org/v1/articles?source=";
-            "https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=b6dbc3e3786a4f0196022cda1a763c97";
+            "https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest";
 
-//    private static final String NEWS_TAIL_URL =
-//            "&sortBy=latest&apiKey=b6dbc3e3786a4f0196022cda1a763c97";
-//            "b6dbc3e3786a4f0196022cda1a763c97";
 
-    final static String QUERY_PARAM = "q";
+    // ADD YOUR API KEY IN THE STRING BELOW
+    private static final String apiKey =
+            "";
+
+
+    final static String QUERY_PARAM = "apiKey";
 
 
     public static URL buildUrl() {
 
         Uri builtUri = Uri.parse(NEWS_BASE_URL).buildUpon()
-//                .appendQueryParameter(QUERY_PARAM, newsQuery)
-                //.appendPath(NEWS_TAIL_URL)
+                .appendQueryParameter(QUERY_PARAM, apiKey)
+//                .appendPath(NEWS_KEY)
                 .build();
 
         URL url = null;
