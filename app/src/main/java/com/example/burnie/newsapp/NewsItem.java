@@ -2,12 +2,12 @@ package com.example.burnie.newsapp;
 
 public class NewsItem {
 
-    String author;
-    String title;
-    String description;
-    String url;
-    String urlToImage;
-    String publishedAt;
+    private String author;
+    private String title;
+    private String description;
+    private String url;
+    private String urlToImage;
+    private String publishedAt;
 
     public NewsItem() {
     }

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_forecast);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_news);
         //mSearchResultsTextView = (TextView) findViewById(R.id.tv_news_data);
 
         mErrorMessageDisplay = (TextView) findViewById(R.id.tv_error_message_display);
@@ -150,11 +150,11 @@ public class MainActivity extends AppCompatActivity {
             newsItems.add(newsitem);
 
 
-            parsedNewsData[i] = "Author: " + newsitem.getAuthor() +
+            parsedNewsData[i] = //"Author: " + newsitem.getAuthor() +
                     "\nTitle: " + newsitem.getTitle() +
                     "\nDescription: " + newsitem.getDescription() +
-                    "\nURL: " + newsitem.getUrl() +
-                    "\nURL To Image: " + newsitem.getUrlToImage() +
+                    //"\nURL: " + newsitem.getUrl() +
+                    //"\nURL To Image: " + newsitem.getUrlToImage() +
                     "\nPublished At: " + newsitem.getPublishedAt() + "\n";
 
         }
