@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">News App</string>
     <string name="search">Search</string>
+    <string name="error_message">
+        An error has occurred. Please try again by clicking REFRESH
+    </string>
 </resources>

@@ -25,7 +25,7 @@ public class NetworkUtils {
 
     // ADD YOUR API KEY IN THE STRING BELOW
     private static final String apiKey =
-            "";
+            "b6dbc3e3786a4f0196022cda1a763c97";
 
 
     final static String QUERY_PARAM = "apiKey";
