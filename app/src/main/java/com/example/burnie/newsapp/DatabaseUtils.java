@@ -15,6 +15,14 @@ import static com.example.burnie.newsapp.data.Contract.TABLE_NEWS.COLUMN_NAME_UR
 import static com.example.burnie.newsapp.data.Contract.TABLE_NEWS.TABLE_NAME;
 
 
+/*
+This class has been added to give us the ability to alter the database as well as
+create a cursor.
+Bulkinsert takes in the arraylist of news items and places them into their respective rows in the
+database
+deleteall removes the table from the database
+ */
+
 public class DatabaseUtils {
 
     public static Cursor getAll(SQLiteDatabase db) {

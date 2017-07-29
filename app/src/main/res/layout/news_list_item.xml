@@ -14,22 +14,49 @@
             android:id="@+id/tv_news_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="10dp"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_news_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:textSize="20sp" />
+            android:padding="5dp"
+            android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/tv_news_author"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:textSize="20sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".8"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_news_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight=".2">
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="160sp"
+                    android:layout_height="wrap_content"
+
+                    android:src="@color/colorAccent" />
+            </FrameLayout>
+
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -41,17 +68,6 @@
         <!--android:layout_marginRight="8dp"-->
         <!--&gt;</View>-->
 
-    <FrameLayout
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight=".2">
 
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_gravity="center"
-            android:src="@color/colorAccent" />
-    </FrameLayout>
 
 </LinearLayout>

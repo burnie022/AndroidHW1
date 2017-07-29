@@ -28,6 +28,9 @@ public class RefreshTasks {
 
     public static final String ACTION_REFRESH = "refresh";
 
+/*
+This method has been added to periodically refresh the database to keep updated information on the screen
+ */
 
     public static void refreshNewsArticles(Context context) {
         ArrayList<NewsItem> result = null;
