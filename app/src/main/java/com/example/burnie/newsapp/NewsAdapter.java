@@ -7,31 +7,56 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsAdapterViewHolder>{
 
     private String[] mNewsData;
+    final private ItemClickListener listener;
+    private ArrayList<NewsItem> newsItems;
 
-    public NewsAdapter(){
+    //public NewsAdapter(){}
 
+    public NewsAdapter(ArrayList<NewsItem> newsItems, ItemClickListener listener){
+        this.newsItems = newsItems;
+        this.listener = listener;
     }
 
+    public interface ItemClickListener {
+        void onItemClick(int clickedItemIndex);
+    }
 
-    public class NewsAdapterViewHolder  extends RecyclerView.ViewHolder{
+    //implement onclicklistener
+    public class NewsAdapterViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public final TextView mNewsTextView;
-//        public final TextView mNewsDescView;
-//        public final TextView mNewsTimeView;
+        public final TextView mNewsDescView;
+        public final TextView mNewsAuthorView;
 
         public NewsAdapterViewHolder(View view){
             super(view);
             mNewsTextView = (TextView) view.findViewById(R.id.tv_news_data);
-//            mNewsDescView = (TextView) view.findViewById(R.id.tv_news_description);
-//            mNewsTimeView = (TextView) view.findViewById(R.id.tv_news_time);
+            mNewsDescView = (TextView) view.findViewById(R.id.tv_news_description);
+            mNewsAuthorView = (TextView) view.findViewById(R.id.tv_news_author);
 
+            view.setOnClickListener(this);
         }
 
+        public void bind(int pos) {
+            NewsItem newsItem = newsItems.get(pos);
+            mNewsTextView.setText(newsItem.getTitle());
+            mNewsDescView.setText(newsItem.getDescription());
+            mNewsAuthorView.setText(newsItem.getAuthor());
+        }
+
+        @Override
+        public void onClick(View v) {
+            listener.onItemClick(getAdapterPosition());
+        }
 
     }
+
+
 
     @Override
     public NewsAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -46,15 +71,22 @@ public class NewsAdapter  extends RecyclerView.Adapter<NewsAdapter.NewsAdapterVi
 
     @Override
     public void onBindViewHolder(NewsAdapterViewHolder holder, int position) {
-        String news = mNewsData[position];
-        holder.mNewsTextView.setText(news);
+        //String news = mNewsData[position];
+        //holder.mNewsTextView.setText(news);
+        holder.bind(position);
     }
+
+
 
     @Override
     public int getItemCount() {
-        if (null == mNewsData) return 0;
-        return mNewsData.length;
+        //if (null == mNewsData) return 0;
+        //return mNewsData.length;
+        return newsItems.size();
     }
+
+
+
 
     public void setNewsData(String[] data) {
         mNewsData = data;
