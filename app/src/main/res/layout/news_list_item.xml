@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/tv_weather_data"-->
-        <!--android:textSize="22sp"-->
-        <!--android:padding="16dp"-->
-        <!--/>-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".8"
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/tv_news_data"
@@ -32,37 +31,27 @@
             android:padding="16dp"
             android:textSize="20sp" />
 
+    </LinearLayout>
 
-    <!--<ScrollView-->
+    <!--<View-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="#dadada"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--&gt;</View>-->
 
-        <!--<TextView-->
-            <!--android:id="@+id/tv_news_description"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:padding="16dp"-->
-            <!--android:textSize="20sp" />-->
-    <!--</ScrollView>-->
+    <FrameLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight=".2">
 
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/tv_news_time"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:padding="16dp"-->
-            <!--android:textSize="20sp" />-->
-    <!--</ScrollView>-->
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#dadada"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        ></View>
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:src="@color/colorAccent" />
+    </FrameLayout>
 
 </LinearLayout>
